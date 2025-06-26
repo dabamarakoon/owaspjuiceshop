@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: juice-shop
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: juice-shop
@@ -14,6 +15,9 @@ spec:
       containers:
       - name: juice-shop
         image: bkimminich/juice-shop
+        ports:
+        - containerPort: 3000
+
 
 -----
 
